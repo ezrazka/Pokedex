@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="handlebars.js"></script>
+
+    <script id="pokeCard" type="text/x-handlebars-template">
+        {{#each pokemons}}
+        <div class="card">
+            <div class="image" style="background: url('{{imageUrl}}');"></div>
+
+            <h4 class="poke-name">{{name}}</h4>
+
+        </div>
+        {{/each}}
+    </script>
+</head>
+<body>
+    
+    <div id="nav">
+        <nav id="nav_bar"></nav>
+    </div>
+
+    <div id="deck">
+
+        <div id="deck_child">
+
+            <div class="deck_slot_parent">
+                <div class="deck_slot"> <button>+</button> </div>
+                <div class="deck_slot"> <button>+</button> </div>
+                <div class="deck_slot"> <button>+</button> </div>
+            </div>
+    
+            <div class="deck_slot_parent">
+                <div class="deck_slot"> <button>+</button> </div>
+                <div class="deck_slot"> <button>+</button> </div>
+                <div class="deck_slot"> <button>+</button> </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="pokemon_list">
+
+        <div id="pokemon_list_child">
+
+            <div id="list_pokemon_owned">
+            
+            </div>
+            
+            <div id="list_pokemon_unowned">
+                
+                <div id="title_label_unowned">
+                    
+                    <h3>Belom dapet</h3>
+                    
+                    <div id="arrow"></div>
+                    
+                </div>  
+                
+                <div id="content_unowned_pokemon">
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
