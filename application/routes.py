@@ -7,7 +7,7 @@ from application.forms import LoginForm
 
 
 @app.route("/")
-@login_required
+# @login_required
 def index():
     return render_template("index.html")
 
