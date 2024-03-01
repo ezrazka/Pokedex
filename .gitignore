@@ -1,6 +1,5 @@
 .env
 
-application/static/handlebars.js
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
