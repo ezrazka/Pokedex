@@ -6,8 +6,9 @@
 }
 
 *{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -16,6 +17,17 @@ body{
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
+}
+
+.menuParent{
+    /* background-color: #EEEEEE; */
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    position:fixed;
 }
 /* ############################################################################################################# */
 /* source https://www.youtube.com/watch?v=LcyDtkrnZLM */
@@ -39,7 +51,7 @@ body{
 }
 
 .menu.active li{
-    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform: rotate(calc(360deg / 8 * var(--i)));
 }
 
 .menu li a{
@@ -51,7 +63,7 @@ body{
     font-size: 1.5em;
     border-radius: 50%;
     color: #fff;
-    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform: rotate(calc(360deg / 8 * var(--i)));
     color: transparent;
     transition: 1s;
     transition-delay: 0.5s;
