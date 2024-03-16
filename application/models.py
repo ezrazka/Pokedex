@@ -12,3 +12,14 @@ class User(db.Model, UserMixin):
     profile_pic = db.Column(db.String(255), default="default.jpg")
     is_active = db.Column(db.Boolean, default=True)
     join_date = db.Column(db.DateTime, default=func.now())
+
+class Pokemon(db.Model, UserMixin):
+    __tablename__ = "pokemons"
+    id = db.Column(db.Integer, primary_key=True)
+    pokedex_number = db.Column(db.Integer, primary_key=True, nullable=False)
+    catch_date = db.Column(db.DateTime, default=func.now())
+
+class FavoritePokemon(db.Model, UserMixin):
+    __tablename__ = "favorite_pokemons"
+    id = db.Column(db.Integer, primary_key=True)
+    pokemon_id = db.Column(db.Integer, db.ForeignKey("pokemon.id"))
