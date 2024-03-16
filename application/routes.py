@@ -6,12 +6,6 @@ from application.models import User
 from application.forms import LoginForm
 
 
-@app.route("/")
-# @login_required
-def index():
-    return render_template("index.html")
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
@@ -32,18 +26,28 @@ def login():
     
     return render_template("login.html", title="Login", form=form)
 
-
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("login"))
 
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     pass
 
+@app.route("/")
+# @login_required
+def index():
+    return render_template("index.html")
+
+@app.route("/shop")
+def shop():
+    return render_template("shop.html")
+
+@app.route("/credits")
+def credits():
+    return render_template("credits.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
