@@ -297,3 +297,79 @@ div.card > h4.poke-name {
 		transform: scale(1);
 	}
 }
+
+
+
+/* LOGIN-SIGNUP-FORGOT-RESET */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+	width: 700px;
+	height: 300px;
+	Background-image: url('https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_640.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+			background-position: center;
+            overflow: hidden;
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+h1 {
+    font-size: 28px;
+    text-align: center;
+	margin-right: 170px;
+    color: #fff; 
+    margin-bottom: 2px; /* Add spacing below the heading */
+}
+input[type=text], input[type=password], input[type=email] {   
+	width: 70%;   
+	margin: 7px 0;  
+	padding: 12px 20px;   
+	display: inline-block;   
+	border: 1px solid gray;   
+	box-sizing: border-box;
+	margin-left: 105px;
+	margin-bottom: 20px;
+}  
+input[type=submit]{
+	width: 100%;
+	margin: 7px 0;  
+	padding: 12px 20px;   
+	display: inline-block;   
+	border: 1px solid #5CA2E2;   
+	color: white;
+	box-sizing: border-box;  
+	background-color: #5CA2E2; 
+}
+
+.btn {
+    width: 100%; /* Make the button full-width */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color2); /* Use a variable for the background color */
+    color: #fff; /* Change the text color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.btn:hover {
+    background-color: var(--color3); /* Change the background color on hover */
+}
+
