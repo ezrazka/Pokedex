@@ -1,9 +1,10 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash
 from flask_login import login_user, login_required, logout_user, current_user
 
 from application import app
 from application.models import User
-from application.forms import LoginForm
+from application.forms import LoginForm, SignUpForm
+from application.__init__ import db
 
 
 @app.route("/")
@@ -40,9 +41,26 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/signup", methods=["GET", "POST"])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    pass
+    form = SignUpForm()
+
+    if form.validate_on_submit():
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+
+        user = User.query.filter_by(username=username).first()
+        if user:
+            flash('That username is already taken. Please choose a different one.', 'error')
+        else:
+            new_user = User(username=username, password=password, email=email)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Account created', 'success')
+            return redirect(url_for('login'))
+   
+    return render_template('signup.html', title='Sign Up', form=form)
 
 
 if __name__ == "__main__":
