@@ -49,5 +49,9 @@ def shop():
 def credits():
     return render_template("credits.html")
 
+@app.route("/login")
+def credits():
+    return render_template("login.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
